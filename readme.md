@@ -1,10 +1,10 @@
 ** env_guide **
 
-PORT=
+PORT= 8000
 
-DATABASE_URL=
+DATABASE_URL="mysql://root:@localhost:3306/jirasak_back"
 
-JWT_SECRET=
+JWT_SECRET=leokungYT
 
 ---
 
