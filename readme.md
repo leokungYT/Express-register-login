@@ -32,3 +32,16 @@ response : { id, title, status, du.....} -->
 Notes
 
 MVC (Models, route+Controller, View)
+----
+Get Start
+
+จากนั้นใช้คำสั่งตาม
+
+npm i 
+
+Go config database in .env
+ไป config database ในไฟล์ .env
+
+npm run resetDB // for reset
+npx prisma db push
+npx prisma db seed
