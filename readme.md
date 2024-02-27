@@ -39,9 +39,13 @@ Get Start
 
 npm i 
 npm install -g nodemon
+
 Go config database in .env
+
 ไป config database ในไฟล์ .env
 
 npm run resetDB // for reset
+
 npx prisma db push
+
 npx prisma db seed
