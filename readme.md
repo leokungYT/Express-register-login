@@ -38,7 +38,7 @@ Get Start
 จากนั้นใช้คำสั่งตาม
 
 npm i 
-
+npm install -g nodemon
 Go config database in .env
 ไป config database ในไฟล์ .env
 
