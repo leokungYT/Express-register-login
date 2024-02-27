@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,56 +8,69 @@ datasource db {
 }
 
 model User {
-  id        Int         @id @default(autoincrement())
-  username  String      @db.VarChar(30)
-  lastname  String      @db.VarChar(30)
-  email     String      @unique @db.VarChar(72)
-  password  String      @db.VarChar(72)
-  phone     String      @db.VarChar(72)
-  Role      Role        @default(User)
-  recordINs RecordIN[]
-  RecordOut RecordOut[]
-  Detail    Detail[]
+  id        Int       @id @default(autoincrement())
+  username  String    @db.VarChar(30)
+  lastname  String    @db.VarChar(30)
+  email     String    @unique @db.VarChar(72)
+  password  String    @db.VarChar(72)
+  phone     String    @db.VarChar(72)
+  role      Role      @default(User)
+  position  Position  @default(employee)
+  status    Status    @default(working)
+  recordIns RecordIN[]
+  recordOuts RecordOut[]
+  details   Detail[]
 }
 
+
 model RecordIN {
-  id        Int      @id @default(autoincrement())
-  username  String   @db.VarChar(30)
-  lastname  String   @db.VarChar(30)
-  INdueDate DateTime @default(now()) @db.Timestamp(0)
-  dueDate   DateTime @db.Date
-  userId    Int
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id         Int       @id @default(autoincrement())
+  username   String    @db.VarChar(30)
+  lastname   String    @db.VarChar(30)
+  INdueDate  DateTime  @default(now()) @db.Timestamp(0)
+  dueDate    DateTime  @db.Date
+  userId     Int
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("recordINs")
 }
 
 model RecordOut {
-  id         Int      @id @default(autoincrement())
-  username   String   @db.VarChar(30)
-  lastname   String   @db.VarChar(30)
-  OutdueDate DateTime @default(now()) @db.Timestamp(0)
-  dueDate    DateTime @db.Date
-  userId     Int
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id          Int       @id @default(autoincrement())
+  username    String    @db.VarChar(30)
+  lastname    String    @db.VarChar(30)
+  OutdueDate  DateTime  @default(now()) @db.Timestamp(0)
+  dueDate     DateTime  @db.Date
+  userId      Int
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("recordOuts")
 }
 
 model Detail {
-  id         Int      @id @default(autoincrement())
-  username   String   @db.VarChar(30)
-  lastname   String   @db.VarChar(30)
-  INdueDate  DateTime @default(now()) @db.Timestamp(0)
-  OutdueDate DateTime @default(now()) @db.Timestamp(0)
-  dueDate    DateTime @db.Date
-  userId     Int
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id           Int       @id @default(autoincrement())
+  username     String    @db.VarChar(30)
+  lastname     String    @db.VarChar(30)
+  INdueDate    DateTime  @default(now()) @db.Timestamp(0)
+  OutdueDate   DateTime  @default(now()) @db.Timestamp(0)
+  dueDate      DateTime  @db.Date
+  userId       Int
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("recordDetails")
 }
 
 enum Role {
   User
-  Admin
+  admin
+}
+
+enum Position {
+  employee
+  manager
+}
+
+enum Status {
+  working
+  resign
 }
