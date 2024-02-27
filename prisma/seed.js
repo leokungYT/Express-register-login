@@ -10,31 +10,19 @@ const userData = [
     email: "jirasak@gmail.com",
     password,
     phone: "191",
-    Role: "Admin",
+    role: "admin", 
+    position: "manager", 
+    status: "working"
   },
   {
     username: "jirasak1",
-    lastname: "pimkumlai",
-    email: "jirasak1@gmail.com",
-    password,
-    phone: "191",
-    Role: "User",
-  },
-  {
-    username: "jirasak2",
-    lastname: "pimkumlai",
-    email: "jirasak2@gmail.com",
-    password,
-    phone: "191",
-    Role: "User",
-  },
-  {
-    username: "jirasak3",
-    lastname: "pimkumlai",
-    email: "jirasak3@gmail.com",
-    password,
-    phone: "191",
-    Role: "User",
+        lastname: "pimkumlai",
+        email: "jirasak1@gmail.com",
+        password,
+        phone: "191",
+        role: "User", 
+        position: "employee", 
+        status: "working"
   },
 ];
 
@@ -46,20 +34,6 @@ const RecordIN = [
     dueDate: new Date().toISOString(),
     userId: 2,
   },
-  {
-    username: "jirasak3",
-    lastname: "pimkumlai",
-    INdueDate: new Date().toISOString(),
-    dueDate: new Date().toISOString(),
-    userId: 3,
-  },
-  {
-    username: "jirasak4",
-    lastname: "pimkumlai",
-    INdueDate: new Date().toISOString(),
-    dueDate: new Date().toISOString(),
-    userId: 4,
-  },
 ];
 
 const RecordOut = [
@@ -69,20 +43,6 @@ const RecordOut = [
     OutdueDate: new Date().toISOString(),
     dueDate: new Date().toISOString(),
     userId: 2,
-  },
-  {
-    username: "jirasak3",
-    lastname: "pimkumlai",
-    OutdueDate: new Date().toISOString(),
-    dueDate: new Date().toISOString(),
-    userId: 3,
-  },
-  {
-    username: "jirasak4",
-    lastname: "pimkumlai",
-    OutdueDate: new Date().toISOString(),
-    dueDate: new Date().toISOString(),
-    userId: 4,
   },
 ];
 
@@ -95,20 +55,7 @@ const Detail = [
     dueDate: new Date().toISOString(),
     userId: 2,
   },
-  {
-    username: "jirasak3",
-    lastname: "pimkumlai",
-    INdueDate: new Date().toISOString(),
-    dueDate: new Date().toISOString(),
-    userId: 3,
-  },
-  {
-    username: "jirasak4",
-    lastname: "pimkumlai",
-    INdueDate: new Date().toISOString(),
-    dueDate: new Date().toISOString(),
-    userId: 4,
-  },
+
 ];
 
 const run = async () => {
